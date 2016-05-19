@@ -1,0 +1,17 @@
+h1 {
+  color: blue;
+  font-size: 30px;
+  font-style: italic;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+h1:hover {
+  color: black;
+  font-size: 40px;
+  font-style: italic;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }

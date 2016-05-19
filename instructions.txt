@@ -1,0 +1,17 @@
+1) NPM init (package.json)
+2) npm install --save-dev gulp
+3) gulpfile.js
+4) подключаем gulp ( var gulp = require("gulp"); )
+5) Установка плагинов GULP:
+	5.1) gulpjs.com ( ищем нужный плагин )
+	5.2) Качаем нужный плагин ( npm install --save-dev НАЗВАНИЕ ПЛАГИНА )
+	5.3)  подключаем плагин ( var имя для вызова плагина = require("НАЗВАНИЕ ПЛАГИНА"); )
+	5.4) используем плагин ( gulp.task ...... (информация с сайта) )
+
+
+6) Инициализируем Bower (bower init)
+7) Качаем wiredep ( npm i --save-dev wiredep )	
+
+
+
+Создать папку js в app. Создать таск, который бдует минифицировать и конкатенировать файлы из этой папки в папку build/js.
