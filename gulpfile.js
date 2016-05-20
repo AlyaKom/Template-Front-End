@@ -4,17 +4,32 @@ var sass = require("gulp-sass");
 var prefix = require('gulp-autoprefixer');
 var wiredep = require('wiredep').stream;
 var concat = require('gulp-concat');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+var cache = require('gulp-cache');
 var uglify = require('gulp-uglify'),
     useref = require('gulp-useref'),
     gulpif = require('gulp-if'),
     minifyCss = require('gulp-minify-css');
  
-gulp.task('build', function () {
+gulp.task('build', ['img'], function () {
     return gulp.src('app/*.html')
         .pipe(useref())
         .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.css', minifyCss()))
         .pipe(gulp.dest('build'));
+});
+
+
+gulp.task('img', function(){
+    return gulp.src('app/img/**/*')
+    .pipe(cache(imagemin({
+        interlaced: true,
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}],
+        une: [pngquant()]
+    })))
+    .pipe(gulp.dest('build/img'))
 });
 
 
